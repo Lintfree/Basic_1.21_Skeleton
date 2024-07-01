@@ -1,7 +1,5 @@
 package example.examplemod
 
-import example.examplemod.block.ModBlocks.EXAMPLE_BLOCK
-import example.examplemod.block.ModBlocks.EXAMPLE_ORE
 import example.examplemod.block.ModItems.EXAMPLE_BLOCK_ITEM
 import example.examplemod.block.ModItems.EXAMPLE_ITEM
 import example.examplemod.block.ModItems.EXAMPLE_ORE_ITEM
@@ -12,7 +10,6 @@ import net.minecraft.world.item.CreativeModeTab.ItemDisplayParameters
 import net.minecraft.world.item.CreativeModeTabs
 import net.neoforged.neoforge.registries.DeferredHolder
 import net.neoforged.neoforge.registries.DeferredRegister
-import thedarkcolour.kotlinforforge.neoforge.forge.getValue
 
 object ExampleTab {
 	val CREATIVE_MODE_TABS: DeferredRegister<CreativeModeTab> = DeferredRegister.create(
@@ -29,8 +26,8 @@ object ExampleTab {
 			.icon{ EXAMPLE_ITEM.get().defaultInstance }
 			.displayItems { _: ItemDisplayParameters?, output: CreativeModeTab.Output ->
 				output.accept(EXAMPLE_ITEM.get())
-				output.accept(EXAMPLE_BLOCK_ITEM.toStack())
-				output.accept(EXAMPLE_ORE_ITEM.toStack())
+				output.accept(EXAMPLE_BLOCK_ITEM.get())
+				output.accept(EXAMPLE_ORE_ITEM.get())
 			}.build()
 	}
 }
