@@ -20,7 +20,7 @@ import thedarkcolour.kotlinforforge.neoforge.forge.runForDist
  * The modid should be declared in this object and should match the modId entry
  * in neoforge.mods.toml.
  *
- * An example for blocks is in the `blocks` package of this mod.
+ * An example for blocks is in the `block` package of this mod.
  */
 @Mod(ExampleMod.mod_id)
 @EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD)

@@ -17,8 +17,9 @@ object ExampleTab {
 		ExampleMod.mod_id
 	)
 
-	// Creates a creative tab with the id "examplemod:example_tab" for the example item, that is placed after the combat tab
-	// If you get an "overload resolution ambiguity" error, include the arrow at the start of the closure.
+	/** Create a creative tab with the id "examplemod:example_tab" for the example item, that is placed after the combat tab
+	 * If you get an "overload resolution ambiguity" error, include the arrow at the start of the closure. */
+
 	val ExampleTab: DeferredHolder<CreativeModeTab, CreativeModeTab> = CREATIVE_MODE_TABS.register("example_tab") { ->
 		CreativeModeTab.builder()
 			.title(Component.translatable("Example"))

@@ -11,7 +11,10 @@ import net.neoforged.neoforge.registries.DeferredRegister
 object ModItems {
 	val ITEMS: DeferredRegister.Items = DeferredRegister.createItems(ExampleMod.mod_id)
 
-	// If you get an "overload resolution ambiguity" error, include the arrow at the start of the closure.
+	/** If you get an "overload resolution ambiguity" error, include the arrow at the start of the closure.
+	 *  Register items (not placeable in the world)
+	 *  Register blocks (placeable in the world) as items. Take note how the block is registered as an item
+	 */
 	val EXAMPLE_ITEM: DeferredItem<Item> = ITEMS.register("example_item") { ->
 		Item(Item.Properties().stacksTo(64))
 	}
