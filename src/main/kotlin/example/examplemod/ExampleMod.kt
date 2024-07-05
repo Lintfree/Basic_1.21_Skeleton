@@ -22,19 +22,20 @@ import thedarkcolour.kotlinforforge.neoforge.forge.runForDist
  *
  * An example for blocks is in the `block` package of this mod.
  */
-@Mod(ExampleMod.mod_id)
+@Mod(ExampleMod.MOD_ID)
 @EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD)
 object ExampleMod {
-    const val mod_id = "examplemod"
+    const val MOD_ID = "examplemod"
 
     // the logger for our mod
-    private val LOGGER: Logger = LogManager.getLogger(mod_id)
+    private val LOGGER: Logger = LogManager.getLogger(MOD_ID)
 
     init {
         LOGGER.log(Level.INFO, "Hello world!")
 
         // Register the KDeferredRegister to the mod-specific event bus
         ModBlocks.REGISTER_BLOCKS.register(MOD_BUS)
+        ModBlocks.REGISTER_BLOCK_ITEMS.register(MOD_BUS)
         ModItems.ITEMS.register(MOD_BUS)
         ExampleTab.CREATIVE_MODE_TABS.register(MOD_BUS)
 

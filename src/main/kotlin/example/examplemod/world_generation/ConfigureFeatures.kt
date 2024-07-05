@@ -121,7 +121,7 @@ object ConfiguredFeatures {
 	private fun registerKey(name: String?): ResourceKey<ConfiguredFeature<*, *>> {
 		return ResourceKey.create(
 			Registries.CONFIGURED_FEATURE,
-			ResourceLocation.fromNamespaceAndPath(ExampleMod.mod_id, name)
+			ResourceLocation.fromNamespaceAndPath(ExampleMod.MOD_ID, name)
 		)
 	}
 	private fun <FC : FeatureConfiguration?, F : Feature<FC>?> register(

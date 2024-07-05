@@ -88,7 +88,7 @@ object PlacedFeatures {
 
 
 	private fun registerKey(name: String): ResourceKey<PlacedFeature> {
-		return ResourceKey.create(Registries.PLACED_FEATURE, ResourceLocation.fromNamespaceAndPath(ExampleMod.mod_id, name))
+		return ResourceKey.create(Registries.PLACED_FEATURE, ResourceLocation.fromNamespaceAndPath(ExampleMod.MOD_ID, name))
 	}
 
 	private fun register(
