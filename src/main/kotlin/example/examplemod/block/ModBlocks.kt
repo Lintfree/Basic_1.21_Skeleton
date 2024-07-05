@@ -1,9 +1,11 @@
 package example.examplemod.block
 
 import example.examplemod.ExampleMod
+import net.minecraft.util.valueproviders.UniformInt
 import net.minecraft.world.item.BlockItem
 import net.minecraft.world.item.Item
 import net.minecraft.world.level.block.Block
+import net.minecraft.world.level.block.DropExperienceBlock
 import net.minecraft.world.level.block.state.BlockBehaviour
 import net.neoforged.neoforge.registries.DeferredBlock
 import net.neoforged.neoforge.registries.DeferredItem
@@ -12,13 +14,14 @@ import net.neoforged.neoforge.registries.DeferredRegister
 /**
  * Register blocks (placeable in the world) as items.
  * Take note how the block is registered as an item
+ * If you get an "overload resolution ambiguity" error, include the arrow at the start of the closure.
+ * Even though block_item and ore_item are greyed out and say not used, they are still used when game runs.
 */
 
 object ModBlocks {
     val REGISTER_BLOCKS: DeferredRegister.Blocks = DeferredRegister.createBlocks(ExampleMod.MOD_ID)
-    val  REGISTER_BLOCK_ITEMS: DeferredRegister.Items = DeferredRegister.createItems(ExampleMod.MOD_ID)
+    val REGISTER_BLOCK_ITEMS: DeferredRegister.Items = DeferredRegister.createItems(ExampleMod.MOD_ID)
 
-    // If you get an "overload resolution ambiguity" error, include the arrow at the start of the closure.
     val EXAMPLE_BLOCK: DeferredBlock<Block> = REGISTER_BLOCKS.register("example_block") { ->
         Block(BlockBehaviour.Properties.of()
             .lightLevel { 15 }
@@ -31,11 +34,12 @@ object ModBlocks {
     }
 
     val EXAMPLE_ORE: DeferredBlock<Block> = REGISTER_BLOCKS.register("example_ore") { ->
-        Block(BlockBehaviour.Properties.of()
+        DropExperienceBlock(
+            UniformInt.of(8, 15),
+            BlockBehaviour.Properties.of()
             .lightLevel { 15 }
             .strength(3.0f)
             .requiresCorrectToolForDrops())
-            //.getExpDrop(10))
     }
 
     val EXAMPLE_ORE_ITEM: DeferredItem<BlockItem> = REGISTER_BLOCK_ITEMS.register("example_ore") { ->
