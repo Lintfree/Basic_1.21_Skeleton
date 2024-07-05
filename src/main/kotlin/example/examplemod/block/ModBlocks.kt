@@ -13,11 +13,11 @@ import net.neoforged.neoforge.registries.DeferredItem
 import net.neoforged.neoforge.registries.DeferredRegister
 
 /**
- * Register blocks (placeable in the world) as items.
- * Take note how the block is registered as an item
+ * Register blocks (placeable in the world).
+ * Take note how the block is also registered as an item
  * If you get an "overload resolution ambiguity" error, include the arrow at the start of the closure.
  * Even though block_item and ore_item are greyed out and say not used, they are still used when game runs.
- * Block properties can be customized or copy from another block
+ * Block properties can be customized or copied from another block
 */
 
 object ModBlocks {
