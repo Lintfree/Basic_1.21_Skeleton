@@ -5,6 +5,7 @@ import net.minecraft.util.valueproviders.UniformInt
 import net.minecraft.world.item.BlockItem
 import net.minecraft.world.item.Item
 import net.minecraft.world.level.block.Block
+import net.minecraft.world.level.block.Blocks
 import net.minecraft.world.level.block.DropExperienceBlock
 import net.minecraft.world.level.block.state.BlockBehaviour
 import net.neoforged.neoforge.registries.DeferredBlock
@@ -16,6 +17,7 @@ import net.neoforged.neoforge.registries.DeferredRegister
  * Take note how the block is registered as an item
  * If you get an "overload resolution ambiguity" error, include the arrow at the start of the closure.
  * Even though block_item and ore_item are greyed out and say not used, they are still used when game runs.
+ * Block properties can be customized or copy from another block
 */
 
 object ModBlocks {
@@ -36,10 +38,7 @@ object ModBlocks {
     val EXAMPLE_ORE: DeferredBlock<Block> = REGISTER_BLOCKS.register("example_ore") { ->
         DropExperienceBlock(
             UniformInt.of(8, 15),
-            BlockBehaviour.Properties.of()
-            .lightLevel { 15 }
-            .strength(3.0f)
-            .requiresCorrectToolForDrops())
+            BlockBehaviour.Properties.ofFullCopy(Blocks.COAL_ORE))
     }
 
     val EXAMPLE_ORE_ITEM: DeferredItem<BlockItem> = REGISTER_BLOCK_ITEMS.register("example_ore") { ->
