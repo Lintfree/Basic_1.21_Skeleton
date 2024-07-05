@@ -89,7 +89,7 @@ object BiomeModifiers {
 	private fun registerKey(name: String): ResourceKey<BiomeModifier> {
 		return ResourceKey.create(
 			NeoForgeRegistries.Keys.BIOME_MODIFIERS,
-			ResourceLocation.fromNamespaceAndPath(ExampleMod.mod_id, name)
+			ResourceLocation.fromNamespaceAndPath(ExampleMod.MOD_ID, name)
 		)
 	}
 }

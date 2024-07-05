@@ -1,8 +1,8 @@
 package example.examplemod
 
-import example.examplemod.block.ModItems.EXAMPLE_BLOCK_ITEM
+import example.examplemod.block.ModBlocks.EXAMPLE_BLOCK
+import example.examplemod.block.ModBlocks.EXAMPLE_ORE
 import example.examplemod.block.ModItems.EXAMPLE_ITEM
-import example.examplemod.block.ModItems.EXAMPLE_ORE_ITEM
 import net.minecraft.core.registries.Registries
 import net.minecraft.network.chat.Component
 import net.minecraft.world.item.CreativeModeTab
@@ -14,7 +14,7 @@ import net.neoforged.neoforge.registries.DeferredRegister
 object ExampleTab {
 	val CREATIVE_MODE_TABS: DeferredRegister<CreativeModeTab> = DeferredRegister.create(
 		Registries.CREATIVE_MODE_TAB,
-		ExampleMod.mod_id
+		ExampleMod.MOD_ID
 	)
 
 	/** Create a creative tab with the id "examplemod:example_tab" for the example item, that is placed after the combat tab
@@ -27,8 +27,8 @@ object ExampleTab {
 			.icon{ EXAMPLE_ITEM.get().defaultInstance }
 			.displayItems { _: ItemDisplayParameters?, output: CreativeModeTab.Output ->
 				output.accept(EXAMPLE_ITEM.get())
-				output.accept(EXAMPLE_BLOCK_ITEM.get())
-				output.accept(EXAMPLE_ORE_ITEM.get())
+				output.accept(EXAMPLE_BLOCK.get())
+				output.accept(EXAMPLE_ORE.get())
 			}.build()
 	}
 }
