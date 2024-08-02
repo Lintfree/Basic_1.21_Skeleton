@@ -1,8 +1,6 @@
 {
   "pack": {
-    "description": {
-      "text": "${mod_id} resources"
-    },
-    "pack_format": 34
+    "description": "Kotlin Modding Skeleton",
+    "pack_format": 48
   }
 }
